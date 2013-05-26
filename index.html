@@ -1,13 +1,12 @@
 <!doctype html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>mastersrp by mastersrp</title>
+    <title>mastersrp</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
@@ -15,25 +14,101 @@
     <![endif]-->
   </head>
   <body>
-    <div class="wrapper">
-      <header class="without-description">
-        <h1>mastersrp</h1>
-        <p></p>
-        <p class="view"><a href="https://github.com/mastersrp">View the Project on GitHub <small>mastersrp</small></a></p>
-        <ul>
-          <li class="single"><a href="">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>mastersrp.github.io</h1>
-
-<p>Not really had a lot to say today. I'll finish up some more later.</p>
-      </section>
+    <p style="font-size:5em;">Hub</p>
+    @necrophcodr
+    <div>
+      <div class="navigator">
+        <a href="#" id="Nav_Home">Home</a>
+      </div>
+      <div class="navigator">
+        <a href="#" id="Nav_About">About</a>
+      </div>
+      <div class="navigator">
+        <a href="#" id="Nav_Projects">Projects</a>
+      </div>
+      <div class="navigator">
+        <a href="http://necrophcodr-blog.herokuapp.com" id="Nav_Blog">Blog</a>
+      </div>
     </div>
-    <footer>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+    <!-- Presentation of test sites below -->
+    <div class="content">
+      <div id="page_Home" style="display: block; ">
+        <div class="warning">
+          <p style="color:red;font-size:5em;line-height:1em;text-align:center;">WARNING</p><br>
+          <p style="text-align:center;">These sites may break your break and everything inside yo head.</p><br>
+          <p style="text-align:center;">Sanity not included.</p><br>
+        </div>
+        <!-- // BEGIN W3C Validator -->
+        <a style="font-size:0.8em;" href="http://validator.w3.org/check?uri=http%3A%2F%2Fmastersrp.github.io">W3C Validation passed!</a>
+      </div>
+      <!-- // END W3C Validator -->
+      <div id="page_About" style="display: none; ">
+        <h1>About Me</h1>
+        <p>This is my personal website. For now it's just testing grounds though.</p>
+        <br>
+        </div>
+        <div id="page_Projects" style="display: none; ">
+          <p style="font-size:3em;">What's what?</p>
+          <br>
+          <p style="font-size:2em;">Projects:</p>
+          <div ng-controller="projectCtrl">
+            <ul ng-repeat="project in projects">
+              <li>
+              <a href="{{ project.url }}">{{ project.name }}</a>: {{ project.desc }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer well well-small">
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+    </div>
+	  <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/angular.min.js"></script>
+    <script src="javascripts/projects.js"></script>
+	  <script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+	  <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-23020595-2']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+	  </script>
+	  <script>
+		$(document).ready(function() {
+		    $('div#page_About').hide();
+		    $('div#page_Home').hide();
+		    $('div#page_Projects').hide();
+		    $('div#page_site_engine').hide();
+		    $('div#page_Home').show('fast');
+		});
+		$('a#Nav_Home').click(function() {
+		   $('div#page_Home').show('fast');
+		   $('div#page_Projects').hide('fast');
+		   $('div#page_About').hide('fast');
+		});
+		$('a#Nav_About').click(function() {
+		    $('div#page_Home').hide('fast');
+		    $('div#page_Projects').hide('fast');
+		    $('div#page_About').show('fast');
+		});
+		$('a#Nav_Projects').click(function() {
+		    $('div#page_Home').hide('fast');
+		    $('div#page_Projects').show('fast');
+		    $('div#page_About').hide('fast');
+		});
+		$('a#Nav_Site_Community').click(function() {
+		    $('div#page_Home').hide('fast');
+		    $('div#page_Projects').hide('fast');
+		    $('div#page_About').hide('fast');
+		});
+	  </script>
   </body>
 </html>
