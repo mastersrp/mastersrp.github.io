@@ -28,7 +28,7 @@
         <a href="#" id="Nav_Projects">Projects</a>
       </div>
       <div class="navigator">
-        <a href="http://necrophcodr-blog.herokuapp.com" id="Nav_Blog">Blog</a>
+        <a href="#" alt="http://necrophcodr-blog.herokuapp.com" id="Nav_Blog">Blog</a>
       </div>
     </div>
     <!-- Presentation of test sites below -->
@@ -106,10 +106,9 @@
 		    $('div#page_Projects').show('fast');
 		    $('div#page_About').hide('fast');
 		});
-		$('a#Nav_Site_Community').click(function() {
-		    $('div#page_Home').hide('fast');
-		    $('div#page_Projects').hide('fast');
-		    $('div#page_About').hide('fast');
+		$('a#Nav_Blog').click(function() {
+		  $('.container').hide();
+		  window.location = "http://necrophcodr-blog.herokuapp.com"
 		});
 	  </script>
   </body>
