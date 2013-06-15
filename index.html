@@ -30,6 +30,9 @@
       <div class="navigator">
         <a href="#" alt="http://necrophcodr-blog.herokuapp.com" id="Nav_Blog">Blog</a>
       </div>
+      <div class="navigator">
+	<a href="#" id="Nav_Contact">Contact</a>
+      </div>
     </div>
     <!-- Presentation of test sites below -->
     <div class="content">
@@ -59,7 +62,13 @@
               </li>
             </ul>
           </div>
-        </div>
+	</div>
+	<div style="min-height: 300px; display:none;" id="page_Contact" >
+	  <p>Contact me live...</p><br/>
+	  <iframe class="well well-small" style="min-width:100%;min-height:60%;" src="http://kiwiirc.com/client/31.25.19.131/#chat">
+	  </iframe>
+	  <p>...Or leave me a message at <a href="mailto:tcg.thegamer@gmail.com">my email</a></p><br/>
+	</div>
       </div>
       <div class="footer well well-small">
         This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
@@ -86,29 +95,38 @@
 	  <script>
 		$(document).ready(function() {
 		    $('div#page_About').hide();
-		    $('div#page_Home').hide();
 		    $('div#page_Projects').hide();
+		    $('div#page_Contact').hide();
 		    $('div#page_site_engine').hide();
 		    $('div#page_Home').show('fast');
 		});
 		$('a#Nav_Home').click(function() {
 		   $('div#page_Home').show('fast');
 		   $('div#page_Projects').hide('fast');
+		    $('div#page_Contact').hide('fast');
 		   $('div#page_About').hide('fast');
 		});
 		$('a#Nav_About').click(function() {
 		    $('div#page_Home').hide('fast');
 		    $('div#page_Projects').hide('fast');
+		    $('div#page_Contact').hide('fast');
 		    $('div#page_About').show('fast');
 		});
 		$('a#Nav_Projects').click(function() {
 		    $('div#page_Home').hide('fast');
 		    $('div#page_Projects').show('fast');
+		    $('div#page_Contact').hide('fast');
 		    $('div#page_About').hide('fast');
 		});
 		$('a#Nav_Blog').click(function() {
 		  $('.container').hide();
 		  window.location = "http://necrophcodr-blog.herokuapp.com"
+		});
+		$('a#Nav_Contact').click(function() {
+		  $('div#page_Home').hide('fast');
+		  $('div#page_Projects').hide('fast');
+		  $('div#page_Contact').show('fast');
+		  $('div#page_About').hide('fast');
 		});
 	  </script>
   </body>
