@@ -1,21 +1,24 @@
 function projectCtrl( $scope ) {
-	$scope.projects = [
-		{
-			"name":"PyUpdater",
-			"url":"http://github.com/mastersrp/PyUpdater",
-			"desc": "A package manager + compiler system. Currently still work in progress, but hasn't been worked on due to the above project. (requires Python 3)"
-		},{
-			"name":"hacktheplanet",
-			"url":"http://github.com/mastersrp/hacktheplanet",
-			"desc":"A hacking simulator/game. Supposed to be somewhat of a Uplink-esque realistic game."
-		},{
-			"name":"SourcePackageManager",
-			"url":"http://mastersrp.github.io/SourcePackageManager",
-			"desc":"A tiny embeddable package manager for use anywhere and everywhere."
-		},{
-			"name":"RSS feed generator",
-			"url":"https://chiselapp.com/user/mastersrp/repository/mltv-rss",
-			"desc":"A simple RSS feed generator with a web interface for customization and embedding."
-		}
-	];
+	$scope.projects = [{
+		"name":"SourcePackageManager",
+		"url":"http://chiselapp.com/user/mastersrp/repository/SourcePackageManager",
+		"desc":"A tiny embeddable package manager for use anywhere and everywhere"
+	},{
+		"name":"Muks.dk",
+		"url":"https://chiselapp.com/user/mastersrp/repository/muks",
+		"desc":"The system behind the next generation network for young people."
+	},{
+		"name":"mcchallenges",
+		"url":"https://github.com/mastersrp/mcchallenges",
+		"desc":"A self-hosted website with Minecraft challenges"	
+	},{
+		"name":"HPL1Engine",
+		"url":"https://github.com/mastersrp/HPL1Engine",
+		"desc":"An attempt at revising the engine code behind the Penumbra games"
+	},{
+		"name":"MLTV-RSS",
+		"url":"https://chiselapp.com/user/mastersrp/repository/mltv-rss",
+		"desc":"A simple RSS feed generator of embeddable HTML"
+	}
+	}];
 }
