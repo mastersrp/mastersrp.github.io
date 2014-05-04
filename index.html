@@ -1,136 +1,93 @@
+
 <!doctype html>
-<html ng-app>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>mastersrp</title>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>necrophcodr' hub</title>
+		<link rel="icon" type="image/png"
+		 href="favicon.png" />
+		<style>
+/*
+ * Site layout Copyright 2014 tinewashere
+ */
+body {   
+	background-color: #ddd;
+	font-family: arial;
+	margin: 0em;
+}
+#avatar {
+	border: 1px solid #ddd;
+	box-shadow: 0 0.1em 0.1em #000;
+	float: left;
+}
+.content a {
+	color: #00AB72;
+}
+.content a:hover {
+	color: #006B47;
+}
+.content a:clicked {
+	color: #00AB72;
+}
+.content {
+	margin: 1em;
+	padding: 1.2em;
+	background-color: #f9f9f9;
+	box-shadow: 0 0.1em 0.2em #000;
+}
+.content h2 {
+	letter-spacing: -1pt;
+	margin: 0em;
+}	
+.notes p {
+	padding: 1em;
+	background-color: #e5e5e5;
+	font-size: 0.8em;
+	text-align: center;
+	margin: 0px;
+}
+.footer p {
+	background-color: #AD003A;
+	color: #fff;
+	padding: 0.5em;
+}
+.footer a {
+	color: #fff;
+}		</style>
+	</head>
+	<body>
+<div class="content"><p><a href="/~tux"><img id="avatar" src="favicon.png" /></a></p>
 
-    <link rel="stylesheet" href="stylesheets/bootstrap.css">
-    <link rel="stylesheet" href="stylesheets/index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    
-    <script type="text/javascript">
-      (function() {
-      var po = document.createElement("script"); po.type =
-      "text/javascript"; po.async = true;
-      po.src = "https://apis.google.com/js/plusone.js?publisherid=102831148284576234434";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(po, s);
-    )();
-    </script>
+<h2>necrophcodr</h2>
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-    <p style="font-size:5em;">Hub</p>
-    @necrophcodr
-    <div>
-      <div class="navigator">
-        <a href="#" id="Nav_Home">Home</a>
-      </div>
-      <div class="navigator">
-        <a href="#" id="Nav_About">About</a>
-      </div>
-      <div class="navigator">
-        <a href="#" id="Nav_Projects">Projects</a>
-      </div>
-      <div class="navigator">
-        <a href="#" alt="https://chiselapp.com/user/mastersrp/repository/necrophcodr_blog" id="Nav_Blog">Blog</a>
-      </div>
-      <div class="navigator">
-	<a href="#" id="Nav_Contact">Contact</a>
-      </div>
-    </div>
-    <!-- Presentation of test sites below -->
-    <div class="content">
-      <div id="page_Home" style="display: block; ">
-        <div class="warning">
-          <p style="color:red;font-size:5em;line-height:1em;text-align:center;">WARNING</p><br>
-          <p style="text-align:center;">These sites may break your break and everything inside yo head.</p><br>
-          <p style="text-align:center;">Sanity not included.</p><br>
-        </div>
-        <!-- // BEGIN W3C Validator -->
-        <a style="font-size:0.8em;" href="http://validator.w3.org/check?uri=http%3A%2F%2Fmastersrp.github.io">W3C Validation passed!</a>
-      </div>
-      <!-- // END W3C Validator -->
-      <div id="page_About" style="display: none; ">
-        <h1>About Me</h1>
-        <p>This is my personal website. For now it's just testing grounds though.</p>
-        <br>
-        </div>
-        <div id="page_Projects" style="display: none; ">
-          <p style="font-size:3em;">What's what?</p>
-          <br>
-          <p style="font-size:2em;">Projects:</p>
-          <div ng-controller="projectCtrl">
-            <ul ng-repeat="project in projects">
-              <li>
-              <a href="{{ project.url }}">{{ project.name }}</a>: {{ project.desc }}
-              </li>
-            </ul>
-          </div>
-          <p>
-          For more information and to view all my projects you can find them
-          on <a href="https://github.com/mastersrp">github</a> and <a
-          href="https://chiselapp.com/user/mastersrp">Chisel</a>.
-          </p>
-	</div>
-	<div style="min-height: 300px; display:none;" id="page_Contact" >
-	  <p>Contact me live...</p><br/>
-	  <iframe class="well well-small" style="min-width:100%;min-height:400px;" src="http://kiwiirc.com/client/88.83.81.86/#chat">
-	  </iframe>
-	  <p>...Or leave me a message at <a href="mailto:tcg.thegamer@gmail.com">my email</a></p><br/>
-	  <a href="https://plus.google.com/102831148284576234434"
-	  rel="publisher">Google+</a>
-	</div>
-      </div>
-      <div class="footer well well-small">
-        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
-      </div>
-    </div>
-	  <script src="javascripts/jquery.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-    <script src="javascripts/angular.min.js"></script>
-    <script src="javascripts/projects.js"></script>
-	  <script>
-		$(document).ready(function() {
-		    $('div#page_About').hide();
-		    $('div#page_Projects').hide();
-		    $('div#page_Contact').hide();
-		    $('div#page_site_engine').hide();
-		    $('div#page_Home').show('fast');
-		});
-		$('a#Nav_Home').click(function() {
-		   $('div#page_Home').show('fast');
-		   $('div#page_Projects').hide('fast');
-		    $('div#page_Contact').hide('fast');
-		   $('div#page_About').hide('fast');
-		});
-		$('a#Nav_About').click(function() {
-		    $('div#page_Home').hide('fast');
-		    $('div#page_Projects').hide('fast');
-		    $('div#page_Contact').hide('fast');
-		    $('div#page_About').show('fast');
-		});
-		$('a#Nav_Projects').click(function() {
-		    $('div#page_Home').hide('fast');
-		    $('div#page_Projects').show('fast');
-		    $('div#page_Contact').hide('fast');
-		    $('div#page_About').hide('fast');
-		});
-		$('a#Nav_Blog').click(function() {
-		  $('.container').hide();
-		  window.location = "https://chiselapp.com/user/mastersrp/repository/necrophcodr_blog"
-		});
-		$('a#Nav_Contact').click(function() {
-		  $('div#page_Home').hide('fast');
-		  $('div#page_Projects').hide('fast');
-		  $('div#page_Contact').show('fast');
-		  $('div#page_About').hide('fast');
-		});
-	  </script>
-  </body>
+<p><div style="clear: both;"></div></p>
+
+<p>Welcome to my site.<br/>
+
+<p>I have a few projects that I&rsquo;ve been working on, hosted in fossil repositories.<br/>
+To view these, click the below links for more information.</p>
+
+<ul>
+<li><a href="http://chiselapp.com/user/mastersrp/repository/SourcePackageManager">SourcePackageManager</a></li>
+<li><a href="https://chiselapp.com/user/mastersrp/repository/vivos">vivos</a></li>
+<li><a href="https://chiselapp.com/user/mastersrp/repository/tinycm-tinypm">TinyPM</a></li>
+<li><a href="https://chiselapp.com/user/mastersrp/repository/tazsur">TazSUR</a></li>
+</ul>
+
+
+<p>Furthermore, from time to time I also work on systems that are stored in git repositories.
+Most of these are available on <a href="https://github.com/mastersrp">my github</a>, a few being:</p>
+
+<ul>
+<li><a href="https://github.com/mastersrp/Muks">Muks</a></li>
+<li><a href="https://github.com/mastersrp/lua">Lua</a></li>
+<li><a href="https://github.com/mastersrp/PyUpdater">PyUpdater</a></li>
+<li><a href="https://github.com/mastersrp/HPL1Engine">HPL1Engine</a></li>
+</ul>
+
+
+<div class="notes"><p>This site was generated using Markdown parsed in-script by <a href="http://www.pell.portland.or.us/~orc/Code/discount/">Discount</a>.</p></div></div>
+
+<div class="footer"><p style="text-align:center;">Copyright 2014 <a href="/~tux/README.cgi">necrophcodr</a> - generated in ~0s</p></div>
+	</body>
 </html>
