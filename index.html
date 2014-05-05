@@ -16,10 +16,20 @@ body {
 	margin: 0em;
 }
 #avatar {
+	background-color: #AD003A;
+	-webkit-animation: blink 4s linear 0s infinite;
+	-moz-animation: blink 4s linear 0s infinite;
+	-ms-animation: blink 4s linear 0s infinite;
+	-o-animation: blink 4s linear 0s infinite;
 	border: 1px solid #ddd;
 	box-shadow: 0 0.1em 0.1em #000;
 	float: left;
 }
+@-webkit-keyframes blink {0%{background:#AD003A}50%{background:#3A003A}100%{background:#AD003A}}
+@-moz-keyframes blink {0%{background:#AD003A}50%{background:#3A003A}100%{background:#AD003A}}
+@-ms-keyframes blink {0%{background:#AD003A}50%{background:#3A003A}100%{background:#AD003A}}
+@-o-keyframes blink {0%{background:#AD003A}50%{background:#3A003A}100%{background:#AD003A}}
+
 .content a {
 	color: #00AB72;
 }
